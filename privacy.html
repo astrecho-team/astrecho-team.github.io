@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy / 隱私權政策 — Astrecho 星迴</title>
+  <meta name="description" content="Official privacy policy for Astrecho (Astrecho 星迴). Detailed disclosures on data access, AccessibilityService, storage, deletion, and third-party processors.">
+  <style>
+    :root {
+      --bg: #030712;
+      --card: #0f172a;
+      --card-highlight: #1e293b;
+      --line: #334155;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #10b981;
+      --accent-dim: rgba(16, 185, 129, 0.15);
+      --accent-hover: #34d399;
+      --danger: #ef4444;
+      --danger-dim: rgba(239, 68, 68, 0.15);
+      --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 32px 20px 80px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-stack);
+      line-height: 1.7;
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 2.1rem;
+      line-height: 1.25;
+      margin: 10px 0 12px;
+      color: #fff;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin: 40px 0 14px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--card-highlight);
+      padding-bottom: 8px;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin: 24px 0 10px;
+      color: #cbd5e1;
+    }
+    p, li { color: var(--text); }
+    .muted { color: var(--text-muted); }
+    a { color: var(--accent-hover); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.4em; }
+    li { margin: 8px 0; }
+    code {
+      background: #1e293b;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: #38bdf8;
+      font-family: Consolas, monospace;
+    }
+
+    /* Language Switcher */
+    .lang-switch-bar {
+      display: flex;
+      gap: 8px;
+      margin: 20px 0;
+      background: var(--card);
+      padding: 6px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      width: fit-content;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #022c22;
+    }
+    .lang-btn:hover:not(.active) {
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* Meta Info Box */
+    .meta-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 20px 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .meta-item dt {
+      color: var(--text-muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .meta-item dd {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* Special Highlight Box (Prominent Disclosure & Delete) */
+    .alert-box {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 22px;
+      margin: 24px 0;
+      border-left: 5px solid var(--accent);
+    }
+    .alert-box.disclosure {
+      border-left-color: #38bdf8;
+      background: #082f4922;
+      border: 1px solid #0369a1;
+      border-left: 5px solid #38bdf8;
+    }
+    .alert-box.delete-box {
+      border-left-color: var(--accent);
+      background: #022c2222;
+      border: 1px solid #065f46;
+      border-left: 5px solid var(--accent);
+    }
+    .alert-box h2, .alert-box h3 {
+      margin-top: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: 16px 0 24px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+      background: var(--card);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+    }
+    th {
+      background: #1e293b;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Language display toggle rules */
+    body.show-zh .en-text { display: none !important; }
+    body.show-en .zh-text { display: none !important; }
+    .bilingual-pair { margin-bottom: 12px; }
+    .en-sub { color: #cbd5e1; font-size: 0.95em; }
+  </style>
+</head>
+<body class="show-bilingual">
+  <main>
+    <header>
+      <div class="eyebrow">Astrecho Compliance &amp; Transparency</div>
+      <h1>
+        <span class="zh-text">隱私權政策</span>
+        <span class="en-text">Privacy Policy</span>
+      </h1>
+      <p class="muted">
+        <span class="zh-text">本政策說明 Astrecho 星迴（應用程式套件名稱：<code>com.astrecho.app</code>）如何存取、收集、使用、儲存與保護使用者與裝置資料，以及如何行使資料刪除權利。</span>
+        <span class="en-text">This policy explains how Astrecho (Package Name: <code>com.astrecho.app</code>) accesses, collects, uses, stores, and protects user and device data, and how you can exercise your data deletion rights.</span>
+      </p>
+
+      <div class="lang-switch-bar">
+        <button type="button" class="lang-btn" onclick="setLang('zh')">繁體中文</button>
+        <button type="button" class="lang-btn" onclick="setLang('en')">English</button>
+        <button type="button" class="lang-btn active" onclick="setLang('bilingual')">雙語對照 / Bilingual</button>
+      </div>
+
+      <div class="meta-box">
+        <div class="meta-item">
+          <dt>App / 應用程式</dt>
+          <dd>Astrecho (Astrecho 星迴)</dd>
+        </div>
+        <div class="meta-item">
+          <dt>Package Name / 套件名稱</dt>
+          <dd><code>com.astrecho.app</code></dd>
+        </div>
+        <div class="meta-item">
+          <dt>Developer / 開發團隊</dt>
+          <dd>Astrecho Team (<a href="https://github.com/astrecho-team/astrecho-privacy" target="_blank" rel="noopener">GitHub</a>)</dd>
+        </div>
+        <div class="meta-item">
+          <dt>Contact Email / 聯絡信箱</dt>
+          <dd><a href="mailto:astrecho.app@gmail.com">astrecho.app@gmail.com</a></dd>
+        </div>
+        <div class="meta-item">
+          <dt>Effective Date / 生效日期</dt>
+          <dd>2026-09-18</dd>
+        </div>
+        <div class="meta-item">
+          <dt>Last Updated / 最後更新</dt>
+          <dd>2026-11-12</dd>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION: Prominent Disclosure for Accessibility Service -->
+    <section class="alert-box disclosure" id="accessibility">
+      <h2 style="color: #38bdf8;">
+        <span class="zh-text">⚡ 無障礙服務顯著揭露（Prominent Disclosure）</span>
+        <span class="en-text">⚡ Prominent Disclosure: Accessibility Service</span>
+      </h2>
+      <div class="zh-text">
+        <p><strong>Astrecho 星迴 依賴 Android AccessibilityService API 來提供核心數位防衛與應用程式攔截功能。請於啟用前詳閱下列聲明：</strong></p>
+        <ul>
+          <li><strong>使用目的：</strong>無障礙服務<strong>僅用於即時辨識當前正在運行的前景應用程式套件名稱（Package Name）；若您額外啟用「網頁阻擋防護」，則會在瀏覽器內僅讀取網址列網域</strong>，在裝置本機即時比對是否屬於您設定的受保護／封鎖清單，藉以提供與 App 防衛一致的計時、金句通知或覺醒疊加畫面提醒。</li>
+          <li><strong>絕不收集個人內容：</strong>我們<strong>絕對不會</strong>讀取、記錄或攔截您在螢幕上輸入的任何文字、密碼、聊天訊息、個人對話、金融資料、網頁內文或瀏覽歷史。</li>
+          <li><strong>絕不操控裝置：</strong>無障礙服務<strong>絕不</strong>用於自動點擊、手勢模擬、修改系統偏好設定或規避系統安全機制。</li>
+          <li><strong>完全本機處理：</strong>無障礙服務所偵測到的前景套件名稱與瀏覽器網址列網域僅在裝置本機端記憶體即時比對並立即釋放，<strong>絕不會記錄、儲存或外傳至任何遠端伺服器或第三方</strong>。</li>
+        </ul>
+      </div>
+      <div class="en-text">
+        <p><strong>Astrecho utilizes the Android AccessibilityService API to deliver its core digital defense, app intervention, and opt-in Website Blocker features. Please review the following declaration:</strong></p>
+        <ul>
+          <li><strong>Purpose of Use:</strong> The AccessibilityService is used <strong>solely to identify the package name of the currently active foreground application—and when Website Blocker is enabled, the browser address-bar domain</strong>—to match against your self-configured blocklist on-device and trigger your chosen Notification or Live Block overlay flow.</li>
+          <li><strong>No Content Inspection:</strong> We <strong>never</strong> inspect, read, log, or collect your keystrokes, passwords, typed text, chat messages, financial data, web page contents, or browsing history.</li>
+          <li><strong>No Device Manipulation:</strong> The AccessibilityService is <strong>never</strong> used for automated clicks, simulated gestures, changing system settings, or bypassing system security.</li>
+          <li><strong>Local-Only Processing:</strong> Foreground package and address-bar domain matching runs ephemerally in-memory on your device and is <strong>never logged, stored, or transmitted to any remote servers or third parties</strong>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION: Data Deletion -->
+    <section class="alert-box delete-box" id="delete">
+      <h2 style="color: var(--accent);">
+        <span class="zh-text">🗑️ 如何刪除您的資料（Data Deletion Policy）</span>
+        <span class="en-text">🗑️ How to Delete Your Data</span>
+      </h2>
+      <div class="zh-text">
+        <p>我們尊重並保障您的資料自主權。Astrecho 星迴 採用匿名帳號機制（無需註冊密碼），您可以隨時透過以下方式刪除所有本機與雲端資料：</p>
+        <ol>
+          <li><strong>刪除裝置本機資料：</strong>
+            於 Android「設定」&gt;「應用程式」&gt;「Astrecho 星迴」選擇「清除儲存空間與快取」，或直接<strong>解除安裝應用程式</strong>。所有本機設定、快取語句、用量日誌及本機相片將全數被系統清除。
+          </li>
+          <li><strong>申請刪除雲端所有關聯資料：</strong>
+            請寄送電子郵件至 <a href="mailto:astrecho.app@gmail.com?subject=Data%20Deletion%20Request%20-%20Astrecho"><strong>astrecho.app@gmail.com</strong></a>，信件主旨註明：<code>Data Deletion Request / 資料刪除申請</code>。
+            信件內文請附上您在 App 內設定的暱稱或大約使用時間（若無亦可直接提出），我們將於 7 個工作日內徹底刪除。
+          </li>
+        </ol>
+        <h3>雲端刪除範圍包括：</h3>
+        <ul>
+          <li><strong>Cloud Firestore 個人檔案：</strong>儲存於 <code>user_profiles</code> 與 <code>users</code> 中的個人設定、時薪估值、目標契約、封鎖名單及社交好友關聯。</li>
+          <li><strong>好友碼關聯：</strong>儲存於 <code>friend_codes</code> 中由系統為您產生的匿名邀請代碼。</li>
+          <li><strong>Firebase Storage 成就照片：</strong>若您曾在成長樹中啟用「分享證明照片」，已上傳至 <code>users/{uid}/proofs/</code> 的證明相片將全數永久清除。</li>
+        </ul>
+      </div>
+      <div class="en-text">
+        <p>We respect your right to control your personal data. Astrecho uses an anonymous authentication model without requiring email/password accounts. You can delete your local and cloud data at any time:</p>
+        <ol>
+          <li><strong>Delete Local Data:</strong>
+            Go to Android Settings &gt; Apps &gt; Astrecho and tap "Clear Data / Storage", or simply <strong>uninstall the application</strong>. All local preferences, cached quotes, usage logs, and local photos will be wiped immediately by the OS.
+          </li>
+          <li><strong>Request Deletion of Cloud Data:</strong>
+            Send an email to <a href="mailto:astrecho.app@gmail.com?subject=Data%20Deletion%20Request%20-%20Astrecho"><strong>astrecho.app@gmail.com</strong></a> with the subject: <code>Data Deletion Request - Astrecho</code>.
+            We will verify and permanently delete all your cloud-stored data within 7 business days.
+          </li>
+        </ol>
+        <h3>What Will Be Permanently Deleted:</h3>
+        <ul>
+          <li><strong>Cloud Firestore Profiles:</strong> All documents in <code>user_profiles</code> and <code>users</code> (nickname, goals, defense contract, blocked app list, friend connections, RPG summary).</li>
+          <li><strong>Friend Codes:</strong> The anonymous pairing code generated under <code>friend_codes</code>.</li>
+          <li><strong>Firebase Storage Proof Photos:</strong> Any milestone completion photos uploaded to <code>users/{uid}/proofs/</code> if you opted into proof photo sharing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Data We Collect -->
+    <section id="collection">
+      <h2>
+        <span class="zh-text">1. 我們收集與處理的資料</span>
+        <span class="en-text">1. Data We Access and Collect</span>
+      </h2>
+
+      <h3>
+        <span class="zh-text">1.1 您自行填寫的個人檔案與防衛設定</span>
+        <span class="en-text">1.1 Profile and Defense Parameters You Provide</span>
+      </h3>
+      <div class="zh-text">
+        <p>在設定個人檔案與防衛契約時，您可自由選擇填寫以下資訊（未填寫項目絕不強制收集）：</p>
+        <ul>
+          <li>暱稱、年齡區間、性別、職業、所在城市/地區（自願文字填寫，無 GPS 定位）</li>
+          <li>時薪估值、個人里程碑目標、榜樣、家庭與生活連結描述</li>
+          <li>每日用量上限、自訂封鎖應用程式與提醒方式設定</li>
+          <li>匿名好友代碼（Friend Code）與互相致敬（Respects）紀錄</li>
+        </ul>
+        <p>上述資訊儲存於裝置本機，並透過加密通道同步至 Google Cloud Firestore，用於跨裝置設定保存與好友進度同步；您自行匯入的個人化覺醒金句則僅儲存於裝置本機，不會上傳雲端。</p>
+      </div>
+      <div class="en-text">
+        <p>When configuring your profile and defense contract, you may voluntarily provide:</p>
+        <ul>
+          <li>Nickname, age range, gender, occupation, location description (text-only, NO GPS)</li>
+          <li>Hourly wage estimate, life goals, role models, core motivations</li>
+          <li>Daily app limits, target restricted apps, and alert mode settings</li>
+          <li>Anonymous Friend Code and mutual respect interactions</li>
+        </ul>
+        <p>This data is stored locally and synchronized to Google Cloud Firestore via encrypted HTTPS for state persistence and friend progress syncing; any personalized awakening quotes you import are stored strictly locally on your device and never uploaded to the cloud.</p>
+      </div>
+
+      <h3>
+        <span class="zh-text">1.2 相片與媒體檔案（Photos and Media）</span>
+        <span class="en-text">1.2 Photos and Media</span>
+      </h3>
+      <div class="zh-text">
+        <p>我們<strong>絕不讀取您未選取的相片，亦不存取您的相機硬體</strong>：</p>
+        <ul>
+          <li><strong>自訂覺醒背景圖片：</strong>當您主動更換語句背景時，僅透過系統標準相片挑選器（Photo Picker）取得您自行勾選的照片，經本機裁切後儲存在裝置內部目錄，<strong>絕不上傳雲端</strong>。</li>
+          <li><strong>成長成就證明相片（選用）：</strong>在完成成長樹挑戰任務時，您可以主動挑選單張相片作為完成證明儲存於本機。<strong>僅當您在設定中主動開啟「分享證明照片」選項時</strong>，該相片才會上傳至 Google Firebase Storage（<code>users/{uid}/proofs/</code>）以供社群好友查看。</li>
+        </ul>
+      </div>
+      <div class="en-text">
+        <p>We <strong>never inspect unselected photos and do not access your camera hardware</strong>:</p>
+        <ul>
+          <li><strong>Custom Quote Backgrounds:</strong> When you customize quote backgrounds, we use the standard system Photo Picker to access only the single or batch images you explicitly select. Cropped copies are stored strictly on your local device storage and are <strong>never uploaded to the cloud</strong>.</li>
+          <li><strong>Growth Milestone Proof Photos (Optional):</strong> When completing a habit milestone, you may select an image as proof of completion. <strong>Only if you explicitly enable "Share Proof Photos"</strong> in settings will that specific photo be uploaded to Google Firebase Storage (<code>users/{uid}/proofs/</code>) for connected friends to view.</li>
+        </ul>
+      </div>
+
+      <h3>
+        <span class="zh-text">1.3 裝置狀態、用量與應用程式清單</span>
+        <span class="en-text">1.3 Device Status, Usage, and App List</span>
+      </h3>
+      <div class="zh-text">
+        <ul>
+          <li><strong>用量統計（PACKAGE_USAGE_STATS）：</strong>取得各應用程式的前景累計時間，以計算今日是否超過限制。</li>
+          <li><strong>前景套件名稱（無障礙服務）：</strong>即時辨別當前開啟的應用程式是否在受保護清單中（詳見上方顯著揭露）。</li>
+          <li><strong>應用程式挑選清單：</strong>App <strong>未申請</strong>廣泛的 <code>QUERY_ALL_PACKAGES</code> 權限，僅在本機透過標準 Launcher 意圖查詢可啟動的桌面應用供您挑選受保護項目。未勾選之其他 App 資訊絕不上傳或紀錄。</li>
+          <li><strong>本機網頁阻擋（無障礙網址列比對）：</strong>僅於您手動開啟「網頁阻擋防護」並明確同意後，在瀏覽器內於本機記憶體比對網址列網域是否符合您自訂的分心網站清單，絕不建立 VPN 代理、不修改 DNS、不側錄瀏覽歷史。</li>
+          <li><strong>匿名使用者 ID（Firebase Anonymous Auth）：</strong>系統採用 Firebase 匿名身分驗證簽發隨機 UID（格式如 <code>auth_uid</code> 或 <code>device_...</code>），無須輸入 Email 或密碼即可關聯您的雲端檔案。</li>
+        </ul>
+      </div>
+      <div class="en-text">
+        <ul>
+          <li><strong>Usage Statistics (PACKAGE_USAGE_STATS):</strong> Reads daily foreground usage time of apps to track against your self-imposed limits.</li>
+          <li><strong>Foreground Package Name (Accessibility Service):</strong> Identifies whether the active app is on your restricted list (see Prominent Disclosure above).</li>
+          <li><strong>App Selection List:</strong> The app <strong>does NOT</strong> request the high-risk <code>QUERY_ALL_PACKAGES</code> permission. It queries launchable apps locally via Android Launcher Intent so you can pick target apps. Unselected apps are never cataloged or uploaded.</li>
+          <li><strong>On-Device Website Blocker (Accessibility Address-Bar Matching):</strong> When explicitly enabled by you after consent, matches browser address-bar domains solely in RAM against your chosen blocklist without VPN tunnels, DNS changes, or browsing logs.</li>
+          <li><strong>Anonymous User ID (Firebase Anonymous Auth):</strong> The app uses Firebase Anonymous Authentication to generate a unique random UID without requiring email or password credentials.</li>
+        </ul>
+      </div>
+
+      <h3>
+        <span class="zh-text">1.4 我們絕不收集的資料</span>
+        <span class="en-text">1.4 Data We Explicitly Do NOT Collect</span>
+      </h3>
+      <div class="zh-text">
+        <ul>
+          <li>❌ 不要求註冊 Email / 密碼等個人實名帳號</li>
+          <li>❌ 不收集精確 GPS 地理定位資訊</li>
+          <li>❌ 不讀取通訊錄聯絡人、通話紀錄或 SMS 簡訊</li>
+          <li>❌ 不開啟相機硬體拍攝或麥克風收音</li>
+          <li>❌ 不透過無障礙服務讀取螢幕內容、密碼或聊天對話</li>
+        </ul>
+      </div>
+      <div class="en-text">
+        <ul>
+          <li>❌ No requirement for email/password real-name account registration</li>
+          <li>❌ No precise GPS geolocation tracking</li>
+          <li>❌ No access to contacts, call logs, or SMS text messages</li>
+          <li>❌ No background camera recording or microphone audio capture</li>
+          <li>❌ No on-screen text, password, or chat message inspection via Accessibility API</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 2: How We Use Data -->
+    <section id="usage">
+      <h2>
+        <span class="zh-text">2. 我們如何使用資料</span>
+        <span class="en-text">2. How We Use Data</span>
+      </h2>
+      <div class="zh-text">
+        <ul>
+          <li>計算指定應用的使用時間，並在超限時觸發全螢幕防衛覆蓋、倒數與心理覺醒卡片。</li>
+          <li>依據您的個人目標在本機組裝可複製的 AI 提示詞模板，供您自由貼至外部 AI（如 ChatGPT、Claude 或 Gemini）生成專屬覺醒金句並匯入裝置本機。</li>
+          <li>跨次儲存您的防衛契約、習慣成長樹等級、成就解鎖與時間貨幣狀態。</li>
+          <li>提供好友代碼互聯與彼此致敬（Respects）激勵功能。</li>
+          <li>透過 Google AdMob 呈現橫幅與獎勵廣告，以完全免費方式支撐維運。</li>
+        </ul>
+        <p><strong>我們承諾：絕對不會向任何資料仲介商或廣告行銷公司出售您的個人或裝置資料。</strong></p>
+      </div>
+      <div class="en-text">
+        <ul>
+          <li>Calculate usage times of monitored apps and trigger full-screen defense overlays upon limit breach.</li>
+          <li>Locally package copyable AI prompt templates from your goals so you can optionally generate personalized awakening quotes with external AI tools (such as ChatGPT, Claude, or Gemini) and import them locally.</li>
+          <li>Persist your defense contracts, growth tree nodes, milestone unlocks, and time currency.</li>
+          <li>Enable friend pairing via Friend Codes and mutual respect encouragement.</li>
+          <li>Serve banner and rewarded advertisements via Google AdMob to keep the app free.</li>
+        </ul>
+        <p><strong>We pledge: We NEVER sell your personal data or device usage data to data brokers or advertising exchanges.</strong></p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Third-Party Processors -->
+    <section id="third-party">
+      <h2>
+        <span class="zh-text">3. 第三方服務與資料分享對象</span>
+        <span class="en-text">3. Third-Party Services and Data Processors</span>
+      </h2>
+      <p class="muted">
+        <span class="zh-text">為了提供完整的雲端同步、廣告維運與基礎設施服務，部分資料會由以下經過資安驗證的第三方服務提供者處理：</span>
+        <span class="en-text">To deliver synchronization, ad support, and infrastructure, certain data is processed by the following verified third-party partners:</span>
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th><span class="zh-text">第三方服務</span><span class="en-text">Provider</span></th>
+              <th><span class="zh-text">主要用途</span><span class="en-text">Purpose</span></th>
+              <th><span class="zh-text">可能涉及之資料</span><span class="en-text">Data Involved</span></th>
+              <th><span class="zh-text">隱私政策</span><span class="en-text">Policy</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Firebase Authentication</strong></td>
+              <td><span class="zh-text">匿名身分識別</span><span class="en-text">Anonymous Auth</span></td>
+              <td><span class="zh-text">隨機簽發之匿名 UID、登入時間</span><span class="en-text">Anonymous UID, auth timestamp</span></td>
+              <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Cloud Firestore</strong></td>
+              <td><span class="zh-text">雲端資料庫儲存</span><span class="en-text">Cloud Database</span></td>
+              <td><span class="zh-text">個人檔案、防衛契約、封鎖名單、好友碼與社群互動</span><span class="en-text">User profiles, contracts, blocked apps, friend codes</span></td>
+              <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Data</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Firebase Storage</strong></td>
+              <td><span class="zh-text">成就證明照片儲存（選用）與美術音景資源傳遞</span><span class="en-text">Proof Photo Storage (Optional) &amp; Art/Audio Delivery</span></td>
+              <td><span class="zh-text">使用者主動勾選並開啟分享之任務證明照片；另提供唯讀之風格插圖與音景下載（不含個人識別資料）</span><span class="en-text">User-selected milestone completion photos; read-only art pack &amp; soundscape asset downloads (no PII)</span></td>
+              <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Data</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google AdMob</strong></td>
+              <td><span class="zh-text">應用程式橫幅與獎勵廣告</span><span class="en-text">App Banner &amp; Rewarded Ads</span></td>
+              <td><span class="zh-text">廣告識別碼（AAID）、裝置資訊、網路資訊與廣告互動</span><span class="en-text">Advertising ID, device info, ad clicks/views</span></td>
+              <td><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob Policy</a></td>
+            </tr>
+            <tr>
+              <td><strong>Google Fonts</strong></td>
+              <td><span class="zh-text">字型載入</span><span class="en-text">Font Delivery</span></td>
+              <td><span class="zh-text">IP 位址與瀏覽器 User Agent</span><span class="en-text">IP address, User Agent</span></td>
+              <td><a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener">Fonts Privacy</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Permissions & Sensitive Capabilities -->
+    <section id="permissions">
+      <h2>
+        <span class="zh-text">4. 應用程式權限說明</span>
+        <span class="en-text">4. Application Permissions</span>
+      </h2>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th><span class="zh-text">權限名稱</span><span class="en-text">Permission</span></th>
+              <th><span class="zh-text">為什麼需要此權限</span><span class="en-text">Why It Is Needed</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>BIND_ACCESSIBILITY_SERVICE</code><br>(無障礙服務)</td>
+              <td><span class="zh-text">於前景即時偵測目標應用之套件名稱以觸發防衛攔截（不讀取內容）。</span><span class="en-text">Real-time foreground package name detection for defense triggering (no content inspection).</span></td>
+            </tr>
+            <tr>
+              <td><code>PACKAGE_USAGE_STATS</code><br>(用量存取)</td>
+              <td><span class="zh-text">計算每日應用程式使用分鐘數是否已達防衛上限。</span><span class="en-text">Measures daily app screen time to determine if quota is exceeded.</span></td>
+            </tr>
+            <tr>
+              <td><code>SYSTEM_ALERT_WINDOW</code><br>(在其他應用程式上層顯示)</td>
+              <td><span class="zh-text">在您超過使用上限時，顯示醒目的全螢幕提醒與心理覺醒倒數卡片。</span><span class="en-text">Displays full-screen intervention overlays and countdown cards when limits are reached.</span></td>
+            </tr>
+            <tr>
+              <td><code>FOREGROUND_SERVICE</code><br>(前景服務)</td>
+              <td><span class="zh-text">在背景維持防衛定時器運算，並發出狀態列通知提醒。</span><span class="en-text">Maintains background defense tracking and persistent status reminders.</span></td>
+            </tr>
+            <tr>
+              <td><code>POST_NOTIFICATIONS</code><br>(發送通知)</td>
+              <td><span class="zh-text">即時發送用量警示、覺醒語句與習慣達成推播通知。</span><span class="en-text">Sends critical usage alerts, daily mindfulness pills, and habit streak notices.</span></td>
+            </tr>
+            <tr>
+              <td><code>SCHEDULE_EXACT_ALARM</code><br>(精確鬧鐘)</td>
+              <td><span class="zh-text">準確於每日午夜重設用量計數器並排程背景更新。</span><span class="en-text">Ensures midnight reset and scheduled refresh routines trigger on time.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Children -->
+    <section id="children">
+      <h2>
+        <span class="zh-text">5. 兒童隱私保護（Children's Privacy）</span>
+        <span class="en-text">5. Children's Privacy</span>
+      </h2>
+      <div class="zh-text">
+        <p>Astrecho 星迴 專為成人與 13 歲以上具自我管理意識之青少年設計。我們不會故意收集 13 歲（或您所在司法管轄區規定之法定年齡）以下兒童的個人資料。若您發現未成年子女在未獲家長同意下提供了個人資訊，請透過聯絡信箱通知我們，我們將立即從雲端伺服器徹底清除。</p>
+      </div>
+      <div class="en-text">
+        <p>Astrecho is intended for adults and individuals aged 13 and older seeking digital wellness. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, please contact us at <a href="mailto:astrecho.app@gmail.com">astrecho.app@gmail.com</a>, and we will purge the data immediately.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Security & Policy Changes -->
+    <section id="security">
+      <h2>
+        <span class="zh-text">6. 資料安全與政策修訂</span>
+        <span class="en-text">6. Security and Amendments</span>
+      </h2>
+      <div class="zh-text">
+        <p><strong>資料安全：</strong>所有與 Google Cloud 及 Firebase 之資料傳輸均強制透過 TLS/HTTPS 加密協定。雲端資料庫受 Google Cloud 企業級防火牆與 Firebase 權限規則（Security Rules）保護。</p>
+        <p><strong>政策修訂：</strong>隨著功能擴充或法規調整，我們可能隨時修訂本政策。重大更新將於應用程式內公告並更新本網頁之「最後更新日期」。建議定期檢視本頁面以保障您的知情權益。</p>
+      </div>
+      <div class="en-text">
+        <p><strong>Security:</strong> All network traffic to Google Cloud and Firebase endpoints is encrypted via TLS/HTTPS. Cloud databases are guarded by Firebase Security Rules and Google Cloud security infrastructure.</p>
+        <p><strong>Amendments:</strong> We may revise this policy periodically. Material modifications will be flagged in-app and reflected with an updated "Last Updated" date. Continued use constitutes acceptance of revised terms.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Contact Us -->
+    <section id="contact">
+      <h2>
+        <span class="zh-text">7. 聯絡我們（Contact Us）</span>
+        <span class="en-text">7. Contact Information</span>
+      </h2>
+      <div class="zh-text">
+        <p>若您對本隱私權政策、資料刪除、無障礙服務使用或個人權益有任何疑問與建議，請隨時透過以下官方管道聯繫開發團隊：</p>
+        <ul>
+          <li><strong>電子郵件（Email）：</strong><a href="mailto:astrecho.app@gmail.com">astrecho.app@gmail.com</a></li>
+          <li><strong>開發團隊（Developer）：</strong>Astrecho Team</li>
+          <li><strong>官方隱私權政策網站（Policy URL）：</strong><a href="https://astrecho-team.github.io/astrecho-privacy/privacy.html" target="_blank" rel="noopener">https://astrecho-team.github.io/astrecho-privacy/privacy.html</a></li>
+          <li><strong>問題回報（Issues）：</strong><a href="https://github.com/astrecho-team/astrecho-privacy/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul>
+      </div>
+      <div class="en-text">
+        <p>If you have any questions or concerns regarding this Privacy Policy, AccessibilityService usage, or data deletion, please reach out to us:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:astrecho.app@gmail.com">astrecho.app@gmail.com</a></li>
+          <li><strong>Developer:</strong> Astrecho Team</li>
+          <li><strong>Official Policy Page:</strong> <a href="https://astrecho-team.github.io/astrecho-privacy/privacy.html" target="_blank" rel="noopener">https://astrecho-team.github.io/astrecho-privacy/privacy.html</a></li>
+          <li><strong>Issue Tracker:</strong> <a href="https://github.com/astrecho-team/astrecho-privacy/issues" target="_blank" rel="noopener">GitHub Issues</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        <span class="zh-text">© 2026 Astrecho. 本頁為公開且不可任意竄改之正式隱私權政策規範。</span>
+        <span class="en-text">© 2026 Astrecho. Official, publicly accessible, non-editable Privacy Policy document.</span>
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    function setLang(lang) {
+      document.body.classList.remove('show-zh', 'show-en', 'show-bilingual');
+      if (lang === 'zh') {
+        document.body.classList.add('show-zh');
+      } else if (lang === 'en') {
+        document.body.classList.add('show-en');
+      } else {
+        document.body.classList.add('show-bilingual');
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      if (lang === 'zh') {
+        document.querySelectorAll('.lang-btn')[0].classList.add('active');
+      } else if (lang === 'en') {
+        document.querySelectorAll('.lang-btn')[1].classList.add('active');
+      } else {
+        document.querySelectorAll('.lang-btn')[2].classList.add('active');
+      }
+
+      try {
+        localStorage.setItem('astrecho_privacy_lang', lang);
+      } catch (e) {}
+    }
+
+    // Auto-detect browser preferred language on initial load
+    (function initLang() {
+      try {
+        const saved = localStorage.getItem('astrecho_privacy_lang');
+        if (saved) {
+          setLang(saved);
+          return;
+        }
+      } catch (e) {}
+
+      const userLang = navigator.language || navigator.userLanguage || '';
+      if (userLang.toLowerCase().startsWith('zh')) {
+        setLang('zh');
+      } else {
+        setLang('bilingual');
+      }
+    })();
+  </script>
+</body>
+</html>
